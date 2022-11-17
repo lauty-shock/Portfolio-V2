@@ -1,5 +1,5 @@
 export const CHANGE_LENGUAGE = "CHANGE_LENGUAGE";
-export const CHANGE_MOOD = "CHANGE_MOOD";
+export const CHANGE_MODE = "CHANGE_MODE";
 
 export function changeLenguage(lenguage) {
   return {
@@ -7,9 +7,9 @@ export function changeLenguage(lenguage) {
     payload: lenguage,
   };
 }
-export function changeMood(mood) {
+export function changeMode(mode) {
   return {
-    type: CHANGE_MOOD,
-    payload: mood,
+    type: CHANGE_MODE,
+    payload: mode,
   };
 }

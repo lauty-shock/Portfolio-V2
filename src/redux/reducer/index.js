@@ -1,8 +1,8 @@
-import { CHANGE_LENGUAGE, CHANGE_MOOD } from "../actions";
+import { CHANGE_LENGUAGE, CHANGE_MODE } from "../actions";
 
 const INITIAL_STATE = {
   lenguage: "ESP",
-  mood: "dark",
+  mode: "dark",
 };
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -12,10 +12,10 @@ export default function reducer(state = INITIAL_STATE, action) {
         ...state,
         lenguage: action.payload,
       };
-    case CHANGE_MOOD:
+    case CHANGE_MODE:
       return {
         ...state,
-        mood: action.payload,
+        mode: action.payload,
       };
     default:
       return state;

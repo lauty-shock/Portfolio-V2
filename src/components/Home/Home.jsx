@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import css from "./Home.module.css";
 
 export default function Home() {
-  const lau = useSelector((state) => state.lenguage);
-  console.log(lau);
+  const lenguage = useSelector((state) => state.lenguage);
   return (
-    <center>{lau === "ESP" ? <h1>Inicio</h1> : <h1>Home</h1>}</center>
+    <center>{lenguage === "ESP" ? <h1>Inicio</h1> : <h1>Home</h1>}</center>
   );
 }

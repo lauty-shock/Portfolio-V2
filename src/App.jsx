@@ -5,17 +5,21 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import { useSelector } from "react-redux";
 
 function App() {
+  const mode = useSelector((state) => state.mode);
   return (
     <div className={css.app}>
-      <div className={css.navbar}>
+      <div
+        className={mode === "dark" ? `${css.navbarDark}` : `${css.navbarLight}`}
+      >
         <Navbar />
       </div>
-      <div className={css.header}>
+      <div className={mode === "dark" ? `${css.headerDark}` : `${css.headerLight}`}>
         <Header />
       </div>
-      <div className={css.content}>
+      <div className={mode === "dark" ? `${css.contentDark}` : `${css.contentLight}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
