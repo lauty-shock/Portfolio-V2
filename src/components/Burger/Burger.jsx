@@ -56,7 +56,11 @@ export default function Burger() {
         </button>
       </div>
       {collapsed ? (
-        <div className={css.showMenu}>
+        <div
+          className={
+            mode === "dark" ? `${css.showMenuDark}` : `${css.showMenuLight}`
+          }
+        >
           <div className={css.menuHeader}>
             <button onClick={(e) => setCollapsed(!collapsed)} className={css.X}>
               <span>
@@ -67,11 +71,23 @@ export default function Burger() {
             <section className={css.lenguage}>
               {lenguage === "ESP" ? (
                 <>
-                  <button className={css.btnLenguageActive}>ESP</button>
+                  <button
+                    className={
+                      mode === "dark"
+                        ? `${css.btnLenguageActiveDark}`
+                        : `${css.btnLenguageActiveLight}`
+                    }
+                  >
+                    ESP
+                  </button>
                   <button
                     onClick={(e) => btnLenguage(e)}
                     value="ENG"
-                    className={css.btnLenguage}
+                    className={
+                      mode === "dark"
+                        ? `${css.btnLenguageDark}`
+                        : `${css.btnLenguageLight}`
+                    }
                   >
                     ENG
                   </button>
@@ -81,11 +97,23 @@ export default function Burger() {
                   <button
                     onClick={(e) => btnLenguage(e)}
                     value="ESP"
-                    className={css.btnLenguage}
+                    className={
+                      mode === "dark"
+                        ? `${css.btnLenguageDark}`
+                        : `${css.btnLenguageLight}`
+                    }
                   >
                     ESP
                   </button>
-                  <button className={css.btnLenguageActive}>ENG</button>
+                  <button
+                    className={
+                      mode === "dark"
+                        ? `${css.btnLenguageActiveDark}`
+                        : `${css.btnLenguageActiveLight}`
+                    }
+                  >
+                    ENG
+                  </button>
                 </>
               )}
             </section>
@@ -103,33 +131,53 @@ export default function Burger() {
           <div className={css.menuNavbar}>
             <Link
               to="/"
-              className={css.seccion}
+              className={
+                mode === "dark"
+                  ? `${css.seccionDark}`
+                  : `${css.seccionLight}`
+              }
               onClick={(e) => setCollapsed(!collapsed)}
             >
               <FaHome /> Home
             </Link>
             <Link
               to="/about"
-              className={css.seccion}
+              className={
+                mode === "dark"
+                  ? `${css.seccionDark}`
+                  : `${css.seccionLight}`
+              }
               onClick={(e) => setCollapsed(!collapsed)}
             >
               <FaUserGraduate /> About Me
             </Link>
             <Link
               to="/projects"
-              className={css.seccion}
+              className={
+                mode === "dark"
+                  ? `${css.seccionDark}`
+                  : `${css.seccionLight}`
+              }
               onClick={(e) => setCollapsed(!collapsed)}
             >
               <FaLayerGroup /> Projects
             </Link>
             <span
-              className={css.seccion}
+              className={
+                mode === "dark"
+                  ? `${css.seccionDark}`
+                  : `${css.seccionLight}`
+              }
               onClick={(e) => setCollapsed(!collapsed)}
             >
               <MdDescription /> Resume
             </span>
             <span
-              className={css.seccion}
+              className={
+                mode === "dark"
+                  ? `${css.seccionDark}`
+                  : `${css.seccionLight}`
+              }
               onClick={(e) => setCollapsed(!collapsed)}
             >
               <MdEmail /> Contac
