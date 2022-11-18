@@ -57,11 +57,48 @@
 }
 
 .letterLight {
-    font-weight: 600;
+  font-weight: 600;
   color: var(--light-letter);
 }
 
 .star {
   color: yellow;
   font-size: 1.8rem;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: 60% auto;
+    height: 100%;
+    width: 100%;
+  }
+  .containerImg {
+    grid-row: 1;
+  }
+
+  .containerImg img {
+    height: 450px;
+  }
+  .containerDivs {
+    grid-column: 1;
+    grid-row: 2;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .dataDark,
+  .dataLight {
+    border-radius: 8px;
+
+    min-width: 150px;
+    width: 45%;
+    height: 40%;
+
+    gap: 10px;
+  }
 }

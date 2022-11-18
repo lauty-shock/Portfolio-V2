@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { BsFillStarFill } from "react-icons/bs";
-import projects from "../Projects/projects";
+import projects from "../Projects/arrayProjects";
 import technologies from "../About/technologies";
 import curry from "../../img/curry.png";
 import css from "./Home.module.css";
