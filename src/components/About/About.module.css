@@ -1,0 +1,148 @@
+.containerGrid {
+  display: grid;
+  grid-template-rows: 15% 67% 18%;
+  width: 100%;
+  height: 100%;
+}
+
+.containerSections {
+  grid-row: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+}
+
+.sectionDark,
+.sectionLight,
+.sectionDarkActive,
+.sectionLightActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-color: var(--black);
+  border: 2px solid var(--gray);
+  color: var(--white);
+  font-size: 1.8rem;
+  border-radius: 10px;
+
+  min-width: 160px;
+  width: 15%;
+  height: 80px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.sectionDarkActive {
+  background-color: var(--white-light);
+  border: 2px solid var(--gray);
+  color: var(--light-letter);
+  font-weight: 600;
+}
+
+.sectionLight {
+  background-color: var(--light-back-one);
+  border: 1px solid var(--gray);
+  color: var(--light-letter);
+}
+.sectionLightActive {
+  color: var(--white);
+  background-color: var(--black-super-light);
+  border: 1px solid var(--light-back-one);
+}
+
+.containerContent {
+  display: flex;
+  align-items: center;
+  grid-row: 2;
+}
+.containerCharacter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40%;
+  height: 94%;
+}
+
+.character {
+  border-radius: 30%;
+  background-color: rgb(120, 20, 20);
+  width: 350px;
+  height: 350px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+
+  width: 60%;
+  height: 90%;
+}
+
+.contentInfo {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--black);
+  border: 2px solid var(--gray);
+  width: 85%;
+  height: 100%;
+  color: var(--white);
+  padding: 10px;
+}
+
+.infoTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.infoText {
+  font-size: 1.3rem;
+  color: var(--gray);
+}
+
+.containerTechnologies {
+  grid-row: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technologiesDark,
+.technologiesLight {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: var(--black);
+  border: 2px solid var(--gray);
+  border-radius: 20px;
+
+  width: 90%;
+  height: 80%;
+}
+
+.technologiesLight {
+  background-color: var(--light-back-one);
+  border: 2px solid var(--gray);
+}
+
+.imgTechnologie {
+  height: 70px;
+  filter: saturate(0%);
+  transition: 0.3s;
+  user-select: none;
+}
+.imgTechnologie:hover {
+  filter: saturate(100%);
+}

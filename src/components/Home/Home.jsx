@@ -72,7 +72,7 @@ export default function Home() {
               mode === "dark" ? `${css.letterDark}` : `${css.letterLight}`
             }
           >
-            0 - 1
+            {lenguage === "ESP" ? "1 Año" : "1 Year"}
           </span>
           <span
             className={
