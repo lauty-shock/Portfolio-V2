@@ -143,32 +143,3 @@
   border: 1px solid var(--white-light);
   color: #f1cc10;
 }
-
-.menuNavbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 20px 0;
-}
-
-.seccionDark,
-.seccionLight {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-  color: var(--gray);
-  font-size: 1.5rem;
-  padding: 15px 20px;
-  transition: 0.1s;
-}
-
-.seccionDark:hover {
-  background-color: var(--black-super-light);
-  color: var(--white-light);
-}
-.seccionLight:hover {
-  background-color: var(--gray);
-  color: var(--light-back-one);
-}

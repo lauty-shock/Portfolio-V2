@@ -4,13 +4,8 @@ import { BsSunFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLenguage, changeMode } from "../../redux/actions";
 import { AiOutlineClose } from "react-icons/ai";
-import { FaHome } from "react-icons/fa";
-import { MdDescription } from "react-icons/md";
-import { MdEmail } from "react-icons/md";
-import { FaLayerGroup } from "react-icons/fa";
-import { FaUserGraduate } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import css from "./Burger.module.css";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 export default function Burger() {
   const lenguage = useSelector((state) => state.lenguage);
@@ -128,61 +123,7 @@ export default function Burger() {
               </div>
             )}
           </div>
-          <div className={css.menuNavbar}>
-            <Link
-              to="/"
-              className={
-                mode === "dark"
-                  ? `${css.seccionDark}`
-                  : `${css.seccionLight}`
-              }
-              onClick={(e) => setCollapsed(!collapsed)}
-            >
-              <FaHome /> Home
-            </Link>
-            <Link
-              to="/about"
-              className={
-                mode === "dark"
-                  ? `${css.seccionDark}`
-                  : `${css.seccionLight}`
-              }
-              onClick={(e) => setCollapsed(!collapsed)}
-            >
-              <FaUserGraduate /> About Me
-            </Link>
-            <Link
-              to="/projects"
-              className={
-                mode === "dark"
-                  ? `${css.seccionDark}`
-                  : `${css.seccionLight}`
-              }
-              onClick={(e) => setCollapsed(!collapsed)}
-            >
-              <FaLayerGroup /> Projects
-            </Link>
-            <span
-              className={
-                mode === "dark"
-                  ? `${css.seccionDark}`
-                  : `${css.seccionLight}`
-              }
-              onClick={(e) => setCollapsed(!collapsed)}
-            >
-              <MdDescription /> Resume
-            </span>
-            <span
-              className={
-                mode === "dark"
-                  ? `${css.seccionDark}`
-                  : `${css.seccionLight}`
-              }
-              onClick={(e) => setCollapsed(!collapsed)}
-            >
-              <MdEmail /> Contac
-            </span>
-          </div>
+          <BurgerMenu/>
         </div>
       ) : (
         ""

@@ -1,0 +1,67 @@
+.container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  height: 100%;
+  width: 100%;
+}
+
+.containerImg {
+  grid-column: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerImg img {
+  height: 500px;
+}
+
+.containerDivs {
+  grid-column: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dataDark,
+.dataLight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--black);
+  border-radius: 8px;
+  box-shadow: 0 0 5px var(--gray);
+
+  min-width: 300px;
+  width: 60%;
+  height: 20%;
+
+  gap: 20px;
+}
+
+.dataLight {
+  background-color: var(--light-back-one);
+}
+
+.letterDark,
+.letterLight {
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+.letterLight {
+    font-weight: 600;
+  color: var(--light-letter);
+}
+
+.star {
+  color: yellow;
+  font-size: 1.8rem;
+}

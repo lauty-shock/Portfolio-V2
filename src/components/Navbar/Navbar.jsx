@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 export default function Navbar() {
   const mode = useSelector((state) => state.mode);
+  const lenguage = useSelector((state) => state.lenguage);
   return (
     <ul className={css.container}>
       <Link
@@ -25,7 +26,7 @@ export default function Navbar() {
               : `${css.seccionNameLight}`
           }
         >
-          Home
+          {lenguage === "ESP" ? "Inicio" : "Home"}
         </span>
       </Link>
       <Link
@@ -42,7 +43,7 @@ export default function Navbar() {
               : `${css.seccionNameLight}`
           }
         >
-          About Me
+          {lenguage === "ESP" ? "Sobre mi" : "About me"}
         </span>
       </Link>
       <Link
@@ -59,7 +60,7 @@ export default function Navbar() {
               : `${css.seccionNameLight}`
           }
         >
-          Projects
+          {lenguage === "ESP" ? "Proyectos" : "Projects"}
         </span>
       </Link>
       <li
@@ -75,7 +76,7 @@ export default function Navbar() {
               : `${css.seccionNameLight}`
           }
         >
-          Resume
+          {lenguage === "ESP" ? "CV" : "Resume"}
         </span>
       </li>
       <li
@@ -91,7 +92,7 @@ export default function Navbar() {
               : `${css.seccionNameLight}`
           }
         >
-          Contac
+          {lenguage === "ESP" ? "Contacto" : "Contac"}
         </span>
       </li>
     </ul>
