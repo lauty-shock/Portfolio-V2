@@ -28,7 +28,8 @@
   height: 100%;
 }
 
-.select {
+.selectDark,
+.selectLight {
   border-radius: 3px;
   background-color: var(--black);
   color: var(--white);
@@ -36,17 +37,26 @@
   height: 35px;
   padding-left: 8px;
 }
-.select:focus {
+
+.selectLight {
+  background-color: var(--light-back-one);
+  color: var(--light-letter);
+}
+
+.selectDark:focus,
+.selectLight:focus {
   outline: none;
 }
 
-.mood {
+.moodDark,
+.moodLight {
   display: flex;
   justify-content: center;
   align-items: center;
 
   border-radius: 50%;
-  border: 1px solid var(--gray);
+  background-color: var(--black);
+  border: 1px solid var(--white-light);
 
   font-size: 1.5rem;
   color: #bfa939;
@@ -55,4 +65,10 @@
   height: 40px;
 
   cursor: pointer;
+}
+
+.moodLight {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--white-light);
+  color: #f1cc10;
 }

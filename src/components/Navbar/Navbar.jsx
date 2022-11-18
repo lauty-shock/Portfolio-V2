@@ -5,29 +5,94 @@ import { FaLayerGroup } from "react-icons/fa";
 import { FaUserGraduate } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import css from "./Navbar.module.css";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+  const mode = useSelector((state) => state.mode);
   return (
     <ul className={css.container}>
-      <Link to="/" className={css.seccion}>
+      <Link
+        to="/"
+        className={
+          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
+        }
+      >
         <FaHome />
-        <span className={css.seccionName}>Home</span>
+        <span
+          className={
+            mode === "dark"
+              ? `${css.seccionNameDark}`
+              : `${css.seccionNameLight}`
+          }
+        >
+          Home
+        </span>
       </Link>
-      <Link to="/about" className={css.seccion}>
+      <Link
+        to="/about"
+        className={
+          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
+        }
+      >
         <FaUserGraduate />
-        <span className={css.seccionName}>About Me</span>
+        <span
+          className={
+            mode === "dark"
+              ? `${css.seccionNameDark}`
+              : `${css.seccionNameLight}`
+          }
+        >
+          About Me
+        </span>
       </Link>
-      <Link to='/projects' className={css.seccion}>
+      <Link
+        to="/projects"
+        className={
+          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
+        }
+      >
         <FaLayerGroup />
-        <span className={css.seccionName}>Projects</span>
+        <span
+          className={
+            mode === "dark"
+              ? `${css.seccionNameDark}`
+              : `${css.seccionNameLight}`
+          }
+        >
+          Projects
+        </span>
       </Link>
-      <li className={css.seccion}>
+      <li
+        className={
+          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
+        }
+      >
         <MdDescription />
-        <span className={css.seccionName}>Resume</span>
+        <span
+          className={
+            mode === "dark"
+              ? `${css.seccionNameDark}`
+              : `${css.seccionNameLight}`
+          }
+        >
+          Resume
+        </span>
       </li>
-      <li className={css.seccion}>
+      <li
+        className={
+          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
+        }
+      >
         <MdEmail />
-        <span className={css.seccionName}>Contac</span>
+        <span
+          className={
+            mode === "dark"
+              ? `${css.seccionNameDark}`
+              : `${css.seccionNameLight}`
+          }
+        >
+          Contac
+        </span>
       </li>
     </ul>
   );

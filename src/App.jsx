@@ -6,20 +6,32 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import { useSelector } from "react-redux";
+import Burger from "./components/Burger/Burger";
 
 function App() {
   const mode = useSelector((state) => state.mode);
   return (
     <div className={css.app}>
       <div
+        className={mode === "dark" ? `${css.burgerDark}` : `${css.burgerLight}`}
+      >
+        <Burger />
+      </div>
+      <div
         className={mode === "dark" ? `${css.navbarDark}` : `${css.navbarLight}`}
       >
         <Navbar />
       </div>
-      <div className={mode === "dark" ? `${css.headerDark}` : `${css.headerLight}`}>
+      <div
+        className={mode === "dark" ? `${css.headerDark}` : `${css.headerLight}`}
+      >
         <Header />
       </div>
-      <div className={mode === "dark" ? `${css.contentDark}` : `${css.contentLight}`}>
+      <div
+        className={
+          mode === "dark" ? `${css.contentDark}` : `${css.contentLight}`
+        }
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

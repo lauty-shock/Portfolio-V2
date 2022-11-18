@@ -9,7 +9,8 @@
   gap: 2%;
 }
 
-.seccion {
+.seccionDark,
+.seccionLight {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,16 +26,24 @@
   transition: 0.1s;
 }
 
-.seccion:hover {
+.seccionDark:hover {
   background-color: var(--black-super-light);
   color: var(--white-light);
 }
+.seccionLight:hover {
+  background-color: var(--gray);
+  color: var(--light-back-one);
+}
 
-.seccionName {
+.seccionNameDark,
+.seccionNameLight {
   font-size: var(--h3);
   color: var(--gray);
 }
 
-.seccion:hover .seccionName {
+.seccionDark:hover .seccionNameDark {
   color: var(--white-light);
+}
+.seccionLight:hover .seccionNameLight {
+  color: var(--light-back-one);
 }

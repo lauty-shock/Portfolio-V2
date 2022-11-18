@@ -33,13 +33,19 @@ export default function Header() {
       </span>
 
       <section className={css.section}>
-        <select onChange={(e) => selectLenguage(e)} className={css.select}>
+        <select onChange={(e) => selectLenguage(e)} className={mode === "dark" ? `${css.selectDark}` : `${css.selectLight}`}>
           <option value="ESP">ESP</option>
           <option value="ENG">ENG</option>
         </select>
-        <div onClick={divMode} className={css.mood}>
-          <BsMoonFill />
-        </div>
+        {mode === "dark" ? (
+          <div onClick={divMode} className={css.moodDark}>
+            <BsMoonFill />
+          </div>
+        ) : (
+          <div onClick={divMode} className={css.moodLight}>
+            <BsSunFill />
+          </div>
+        )}
       </section>
     </div>
   );
