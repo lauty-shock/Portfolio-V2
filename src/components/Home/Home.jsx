@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className={css.container}>
       <div className={css.containerImg}>
-        <img src={curry} alt="Yo" />
+        <img src="https://cdni.iconscout.com/illustration/free/thumb/character-2671590-2218229.png" alt="Yo" />
       </div>
       <div className={css.containerDivs}>
         <div

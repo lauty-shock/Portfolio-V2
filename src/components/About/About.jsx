@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { BsFillFlagFill } from "react-icons/bs";
 import technologies from "../About/technologies";
 import css from "./About.module.css";
 
 export default function About() {
+  const softSkills = {
+    esp: [
+      "creatividad",
+      "innovación",
+      "liderazgo",
+      "perseverancia",
+      "persuasión",
+      "proactivo",
+      "sociable",
+    ],
+    eng: [
+      "creativity",
+      "innovation",
+      "leadership",
+      "perseverance",
+      "persuasion",
+      "proactive",
+      "sociable",
+    ],
+  };
   const [section, setSection] = useState("about");
   const lenguage = useSelector((state) => state.lenguage);
   const mode = useSelector((state) => state.mode);
@@ -101,31 +122,83 @@ export default function About() {
 
       <div className={css.containerContent}>
         <div className={css.containerCharacter}>
-          <div className={css.character}></div>
+          <div className={css.character}>AQUÍ VA LA IMAGEN DE UNA PELOTA</div>
         </div>
 
         <div className={css.content}>
-          <div className={css.contentInfo}>
-            {section === "about" && (
-              <>
-                <span className={css.infoTitle}>
-                  {lenguage === "ESP" ? "¿Quién soy?" : "Who am I?"}
-                </span>
+          {section === "about" && (
+            <div className={css.contentInfoAbout}>
+              <span className={css.infoTitle}>
+                {lenguage === "ESP" ? "¿Quién soy?" : "Who am I?"}
+              </span>
+              <span className={css.infoText}>
+                {lenguage === "ESP"
+                  ? "Soy un desarrollador web Full Stack. Estudié en el Bootcamp de Henry y decidí adentrarme en el increíble mundo del Front-end. Durante el instituto estudié diferentes lenguajes de programación y resolví diferentes problemas de lógica. Me gusta mucho aprender nuevas tecnologías ya que soy una persona muy proactiva y curiosa. "
+                  : "I am a Full Stack web developer. I studied on Henry's Bootcamp and decided to go into the amazing world of Front-end. During high school I studied different programmig languages and solved different logic problems. I really enjoy learning new technologies as I am a very proactive and curious person."}
+              </span>
+              <span className={css.infoTitleSecondary}>
+                {lenguage === "ESP" ? "Pasatiempos: " : "Hobbies: "}
                 <span className={css.infoText}>
                   {lenguage === "ESP"
-                    ? "es el protagonista principal de la serie de Anime/Manga Haikyuu!! ilustrada por Haruichi Furudate. Él actualmente jugador del ASAS Sao Paulo y fue estudiante de la Preparatoria Karasuno."
-                    : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae praesentium maiores maxime corrupti distinctio earum, deleniti doloremque fuga et accusamus ipsa laboriosam pariatur quos soluta ducimus rerum, totam qui placeat?"}
+                    ? "Baloncesto, programación y viajes, entre otros."
+                    : "Basketball, programming and travel, among others."}
                 </span>
-                <span className={css.infoHobbies}>
-                  {lenguage === "ESP" ? "Pasatiempos:" : "Hobbies:"}
+              </span>
+            </div>
+          )}
+          {section === "goals" && (
+            <div className={css.contentInfoGoals}>
+              <span className={css.flag}>
+                <BsFillFlagFill />
+                <span className={css.infoText}>
+                  {" "}
+                  -{" "}
+                  {lenguage === "ESP"
+                    ? "Me apasiona la tecnología, por lo que me entusiasma aprender cosas nuevas. Entre ellas me gustaría saber más sobre el desarrollo de aplicaciones móviles, UX, frameworks, automatización, etc."
+                    : "I'm passionate about technology, so I'm very excited to learn new things. Among them I would like to know more about mobile app development, UX, frameworks, automation, etc."}
                 </span>
-              </>
-            )}
-
-            {section === "goals" && <span>GOALS</span>}
-            {section === "location" && <span>LOCATION</span>}
-            {section === "skills" && <span>SKILLS</span>}
-          </div>
+              </span>
+              <span className={css.flag}>
+                <BsFillFlagFill />
+                <span className={css.infoText}> - METAAAAAA</span>
+              </span>
+              <span className={css.flag}>
+                <BsFillFlagFill />
+                <span className={css.infoText}> - METAAAAAA</span>
+              </span>
+            </div>
+          )}
+          {section === "location" && (
+            <div className={css.contentInfoLocation}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108925.52035047632!2d-64.13317053462211!3d-31.44380015555676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432985f478f5b69%3A0xb0a24f9a5366b092!2zQ8OzcmRvYmE!5e0!3m2!1ses!2sar!4v1668826494064!5m2!1ses!2sar"
+                className={css.map}
+              />
+              <span className={css.infoTextMap}>
+                {lenguage === "ESP"
+                  ? "Me encuentro en Córdoba, Argentina. Preferiría trabajar a distancia aunque estoy abierto a discutir todas las propuestas."
+                  : "I'm located in Cordoba, Argentina. I would prefer to work remotely although I'm open to discuss all proposals."}
+              </span>
+            </div>
+          )}
+          {section === "skills" && lenguage === "ESP" && (
+            <div className={css.contentInfoSkill}>
+              {softSkills.esp.map((s) => (
+                <span key={s} className={css.skillDark}>
+                  {s}
+                </span>
+              ))}
+            </div>
+          )}
+          {section === "skills" && lenguage === "ENG" && (
+            <div className={css.contentInfoSkill}>
+              {softSkills.eng.map((s) => (
+                <span key={s} className={css.skillDark}>
+                  {s}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -137,8 +210,8 @@ export default function About() {
               : `${css.technologiesLight}`
           }
         >
-          {technologies.map((t) => (
-            <img className={css.imgTechnologie} src={t.img}></img>
+          {technologies.map((t, index) => (
+            <img key={index} className={css.imgTechnologie} src={t.img}></img>
           ))}
         </div>
       </div>
