@@ -5,6 +5,7 @@ import SectionAbout from "./Sections/SectionAbout";
 import SectionGoals from "./Sections/SectionGoals";
 import SectionLocation from "./Sections/SectionLocation";
 import css from "./About.module.css";
+import SectionTechnologies from "./Sections/SectionTechnologies";
 
 export default function About() {
   const softSkills = {
@@ -99,6 +100,28 @@ export default function About() {
           </button>
         )}
 
+        {section === "technologies" ? (
+          <button
+            className={
+              mode === "dark"
+                ? `${css.sectionDarkActive}`
+                : `${css.sectionLightActive}`
+            }
+          >
+            {lenguage === "ESP" ? "Tecnologías" : "Technologies"}
+          </button>
+        ) : (
+          <button
+            onClick={(e) => setSection(e.target.value)}
+            value="technologies"
+            className={
+              mode === "dark" ? `${css.sectionDark}` : `${css.sectionLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Tecnologías" : "Technologies"}
+          </button>
+        )}
+
         {section === "skills" ? (
           <button
             className={
@@ -131,6 +154,7 @@ export default function About() {
           {section === "about" && <SectionAbout />}
           {section === "goals" && <SectionGoals />}
           {section === "location" && <SectionLocation />}
+          {section === "technologies" && <SectionTechnologies />}
           {section === "skills" && lenguage === "ESP" && (
             <div
               className={
@@ -174,7 +198,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className={css.containerTechnologies}>
+      {/* <div className={css.containerTechnologies}>
         <div
           className={
             mode === "dark"
@@ -186,7 +210,7 @@ export default function About() {
             <img key={index} className={css.imgTechnologie} src={t.img}></img>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .containerGrid {
   display: grid;
-  grid-template-rows: 15% 67% 18%;
+  grid-template-rows: 15% auto;
   width: 100%;
   height: 100%;
 }
@@ -214,38 +214,48 @@
   background-color: var(--gray);
   color: var(--black);
 }
-.containerTechnologies {
-  grid-row: 3;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.technologiesDark,
-.technologiesLight {
+.containerTechnologiesDark,
+.containerTechnologiesLight {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 
+  border-radius: 10px;
   background-color: var(--black);
   border: 2px solid var(--gray);
-  border-radius: 20px;
 
-  width: 90%;
-  height: 80%;
+  width: 85%;
+  height: 100%;
+  padding: 10px 0;
 }
 
-.technologiesLight {
+.containerTechnologiesLight {
   background-color: var(--light-back-one);
-  border: 2px solid var(--gray);
 }
 
-.imgTechnologie {
-  height: 70px;
-  filter: saturate(0%);
-  transition: 0.3s;
-  user-select: none;
+.technologieColum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 30%;
+  height: 100%;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+
+  font-size: 1.3rem;
+  color: white;
 }
-.imgTechnologie:hover {
-  filter: saturate(100%);
+
+@media (max-width: 1000px) {
+  .containerContent {
+    justify-content: center;
+  }
+  .containerCharacter {
+    display: none;
+  }
+  .content {
+    justify-content: center;
+
+    width: 100%;
+  }
 }
