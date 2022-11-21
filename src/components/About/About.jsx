@@ -197,20 +197,6 @@ export default function About() {
           )}
         </div>
       </div>
-
-      {/* <div className={css.containerTechnologies}>
-        <div
-          className={
-            mode === "dark"
-              ? `${css.technologiesDark}`
-              : `${css.technologiesLight}`
-          }
-        >
-          {technologies.map((t, index) => (
-            <img key={index} className={css.imgTechnologie} src={t.img}></img>
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }
