@@ -32,26 +32,26 @@
 
   min-width: 160px;
   width: 15%;
-  height: 80px;
+  height: 90%;
 
   cursor: pointer;
   user-select: none;
 }
 .sectionDarkActive {
-  background-color: var(--white-light);
-  border: 2px solid var(--gray);
+  box-shadow: inset 0 0 5px gray,0 0 5px gray;
+   background-color: var(--black-super-light);
+  /*border: 2px solid var(--gray);
   color: var(--light-letter);
-  font-weight: 600;
+  font-weight: 600; */
 }
-.sectionLight {
+.sectionLight,.sectionLightActive {
   background-color: var(--light-back-one);
   border: 1px solid var(--gray);
   color: var(--light-letter);
 }
 .sectionLightActive {
-  color: var(--white);
-  background-color: var(--black-super-light);
-  border: 1px solid var(--light-back-one);
+  background-color: var(--light-back-three);
+  box-shadow: inset 0 0 5px gray,0 0 5px gray;
 }
 .containerContent {
   display: flex;
@@ -72,8 +72,8 @@
   align-items: center;
   text-align: center;
 
-  border-radius: 50%;
-  background-color: rgb(120, 20, 20);
+  /* border-radius: 50%; */
+  /* background-color: rgb(120, 20, 20); */
   font-size: 1.8rem;
   color: white;
 
@@ -214,22 +214,12 @@
   background-color: var(--gray);
   color: var(--black);
 }
-.containerTechnologiesDark,
-.containerTechnologiesLight {
+.containerTechnologies {
   display: flex;
   justify-content: space-around;
 
-  border-radius: 10px;
-  background-color: var(--black);
-  border: 2px solid var(--gray);
-
   width: 85%;
   height: 100%;
-  padding: 10px 0;
-}
-
-.containerTechnologiesLight {
-  background-color: var(--light-back-one);
 }
 
 .technologieColum {

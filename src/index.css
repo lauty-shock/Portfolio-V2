@@ -23,6 +23,7 @@ a{
   /* ----- light MODE ----- */
   --light-back-one: #D9D9D9;
   --light-back-two: #F2F2F2;
+  --light-back-three: #c0c0c0;
   --light-letter: rgb(28, 30, 33);
   --gray: rgb(150, 150, 150);
 

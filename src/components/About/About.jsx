@@ -6,6 +6,10 @@ import SectionGoals from "./Sections/SectionGoals";
 import SectionLocation from "./Sections/SectionLocation";
 import css from "./About.module.css";
 import SectionTechnologies from "./Sections/SectionTechnologies";
+import goals from "../../img/goals.png";
+import location from "../../img/location.png";
+import skills from "../../img/skills.png";
+import ball from "../../img/ball.png";
 
 export default function About() {
   const softSkills = {
@@ -147,7 +151,16 @@ export default function About() {
 
       <div className={css.containerContent}>
         <div className={css.containerCharacter}>
-          <div className={css.character}>AQUÍ VA LA IMAGEN DE UNA PELOTA</div>
+          {section === "about" && <img src={ball} className={css.character} alt="ball" />}
+          {section === "goals" && (
+            <img src={goals} className={css.character} alt="goals" />
+          )}
+          {section === "location" && (
+            <img src={location} className={css.character} alt="location" />
+          )}
+          {section === "skills" && (
+            <img src={skills} className={css.character} alt="skills" />
+          )}
         </div>
 
         <div className={css.content}>
