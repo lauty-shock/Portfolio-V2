@@ -29,12 +29,13 @@
   color: var(--light-back-one);
   font-weight: 600;
 
-  width: 30px;
-  height: 30px;
-  font-size: 1.3rem;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
   cursor: pointer;
 }
-.form {
+.formDark,
+.formLight {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,12 +46,19 @@
   border-radius: 5px;
 
   width: 40%;
-  height: 85%;
+  height: 90%;
   gap: 5px;
   padding: 10px;
 }
-.form h1 {
+.formLight {
+  background-color: var(--light-back-one);
+  box-shadow: 0 0 2px var(--light-back-two);
+}
+.formDark h1 {
   color: var(--white);
+}
+.formLight h1 {
+  color: var(--light-letter);
 }
 .containerInput,
 .containerTextarea {
@@ -65,8 +73,8 @@
 .containerTextarea {
   height: 40%;
 }
-.containerInput label,
-.containerTextarea label {
+.labelDark,
+.labelLight {
   position: absolute;
   top: 0;
   left: 17%;
@@ -74,8 +82,14 @@
   background-color: var(--black);
   padding: 0 3px;
 }
-.containerInput input,
-.containerTextarea textarea {
+.labelLight {
+  color: var(--light-letter);
+  background-color: var(--light-back-one);
+}
+.inputDark,
+.inputLight,
+.textareaDark,
+.textareaLight {
   width: 75%;
   height: 75%;
   border: 2px solid var(--gray);
@@ -85,15 +99,23 @@
   font-size: 1.1rem;
   color: var(--white);
 }
-.containerTextarea textarea {
+.inputLight,
+.textareaLight {
+  color: var(--light-letter);
+}
+.textareaDark,
+.textareaLight {
   height: 92%;
   resize: none;
 }
-.containerInput input:focus,
-.containerTextarea textarea:focus {
+.inputDark:focus,
+.inputLight:focus,
+.textareaDark:focus,
+.textareaLight:focus {
   outline: none;
 }
-.submit {
+.submitDark,
+.submitLight {
   font-size: 1.2rem;
   border-radius: 3px;
   border: none;
@@ -102,13 +124,23 @@
   height: 40px;
   color: var(--gray);
   background-color: var(--black2);
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
-.submit:hover{
-    color: var(--white);
-    background-color: var(--black-super-light);
+.submitLight {
+  color: var(--light-letter);
+  background-color: var(--light-back-two);
+}
+
+.submitLight:hover {
+  color: var(--white);
+  background-color: var(--gray);
+}
+
+.submitDark:hover {
+  color: var(--white);
+  background-color: var(--black-super-light);
 }
 
 .contacts {
@@ -121,26 +153,38 @@
   height: 50%;
 }
 
-.btnContac {
+.btnContacDark,
+.btnContacLight {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: white;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.btnContac:hover:nth-child(1) {
-  color: blueviolet;
+.btnContacDark:hover:nth-child(1) {
+  color: #8a2be2;
 }
 
-.btnContac:hover:nth-child(2) {
-  color: green;
+.btnContacDark:hover:nth-child(2) {
+  color: #008000;
 }
 
-.btnContac:hover:nth-child(3) {
+.btnContacDark:hover:nth-child(3) {
   color: rgb(40, 103, 178);
+}
+.btnContacLight:hover:nth-child(1) {
+  color: rgb(156, 74, 255);
+}
+
+.btnContacLight:hover:nth-child(2) {
+  color: rgb(0, 200, 0);
+}
+
+.btnContacLight:hover:nth-child(3) {
+  color: rgb(74, 156, 255);
 }
 
 @keyframes show {

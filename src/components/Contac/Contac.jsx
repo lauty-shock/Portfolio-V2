@@ -77,11 +77,23 @@ export default function Contac({ handleSee }) {
       <button className={css.close} onClick={handleSee}>
         <AiOutlineClose />
       </button>
-      <form className={css.form} onSubmit={(e) => submit(e)}>
+      <form
+        className={mode === "dark" ? `${css.formDark}` : `${css.formLight}`}
+        onSubmit={(e) => submit(e)}
+      >
         <h1>{lenguage === "ESP" ? "Contacto" : "Contac"}</h1>
         <div className={css.containerInput}>
-          <label>Email</label>
+          <label
+            className={
+              mode === "dark" ? `${css.labelDark}` : `${css.labelLight}`
+            }
+          >
+            Email
+          </label>
           <input
+            className={
+              mode === "dark" ? `${css.inputDark}` : `${css.inputLight}`
+            }
             type="email"
             name="email"
             value={input.email}
@@ -90,9 +102,17 @@ export default function Contac({ handleSee }) {
           />
         </div>
         <div className={css.containerInput}>
-          <label>{lenguage === "ESP" ? "Nombre" : "Name"}</label>
+          <label
+            className={
+              mode === "dark" ? `${css.labelDark}` : `${css.labelLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Nombre" : "Name"}
+          </label>
           <input
-            className={css.input}
+            className={
+              mode === "dark" ? `${css.inputDark}` : `${css.inputLight}`
+            }
             type="text"
             name="name"
             value={input.name}
@@ -101,8 +121,17 @@ export default function Contac({ handleSee }) {
           />
         </div>
         <div className={css.containerTextarea}>
-          <label>{lenguage === "ESP" ? "Mensaje" : "Message"}</label>
+          <label
+            className={
+              mode === "dark" ? `${css.labelDark}` : `${css.labelLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Mensaje" : "Message"}
+          </label>
           <textarea
+            className={
+              mode === "dark" ? `${css.textareaDark}` : `${css.textareaLight}`
+            }
             name="mensaje"
             value={input.mensaje}
             onChange={(e) => handleInput(e)}
@@ -114,20 +143,29 @@ export default function Contac({ handleSee }) {
           />
         </div>
 
-        <button className={css.submit}>
+        <button
+          className={
+            mode === "dark" ? `${css.submitDark}` : `${css.submitLight}`
+          }
+        >
           {lenguage === "ESP" ? "Enviar" : "Send"}
         </button>
       </form>
+
       <div className={css.contacts}>
         <a
-          className={css.btnContac}
+          className={
+            mode === "dark" ? `${css.btnContacDark}` : `${css.btnContacLight}`
+          }
           href="https://github.com/lauty-shock"
           target="_blank"
         >
           <BsGithub />
         </a>
         <a
-          className={css.btnContac}
+          className={
+            mode === "dark" ? `${css.btnContacDark}` : `${css.btnContacLight}`
+          }
           href={
             lenguage === "ESP"
               ? "https://api.whatsapp.com/send?phone=+543517468699&text=Hola%20Lautaro!%20vi%20tu%20portfolio.."
@@ -138,7 +176,9 @@ export default function Contac({ handleSee }) {
           <BsWhatsapp />
         </a>
         <a
-          className={css.btnContac}
+          className={
+            mode === "dark" ? `${css.btnContacDark}` : `${css.btnContacLight}`
+          }
           href="https://www.linkedin.com/in/lautaroperez135/"
           target="_blank"
         >
