@@ -1,0 +1,47 @@
+.container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+
+  width: 0vw;
+  height: 100vh;
+  animation: show 0.1s forwards;
+  gap: 5px;
+  z-index: 10;
+}
+.cv {
+  width: 500px;
+  height: 100vh;
+}
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+
+  border-radius: 50%;
+  background-color: rgb(240, 35, 35);
+  border: none;
+  color: var(--light-back-one);
+  font-weight: 600;
+
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes show {
+  100% {
+    width: 100vw;
+  }
+}

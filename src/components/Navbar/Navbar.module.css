@@ -24,6 +24,7 @@
   height: 80px;
   gap: 5px;
   transition: 0.1s;
+  cursor: pointer;
 }
 
 .seccionDark:hover {

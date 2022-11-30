@@ -8,13 +8,18 @@ import css from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Contac from "../Contac/Contac";
+import Resume from "../Resume/Resume";
 
 export default function Navbar() {
   const mode = useSelector((state) => state.mode);
   const lenguage = useSelector((state) => state.lenguage);
   const [viewContac, setViewContac] = useState(false);
+  const [viewResume, setViewResume] = useState(false);
 
-  function see() {
+  function seeResume() {
+    setViewResume(!viewResume)
+  }
+  function seeContac() {
     setViewContac(!viewContac)
   }
   return (
@@ -75,6 +80,7 @@ export default function Navbar() {
           className={
             mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
+          onClick={seeResume}
         >
           <MdDescription />
           <span
@@ -91,7 +97,7 @@ export default function Navbar() {
           className={
             mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
-          onClick={see}
+          onClick={seeContac}
         >
           <MdEmail />
           <span
@@ -105,7 +111,8 @@ export default function Navbar() {
           </span>
         </li>
       </ul>
-      {viewContac && <Contac handleSee={see} />}
+      {viewContac && <Contac handleSee={seeContac} />}
+      {viewResume && <Resume handleSee={seeResume} />}
     </>
   );
 }

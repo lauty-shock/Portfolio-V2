@@ -13,6 +13,7 @@
   height: 100vh;
   animation: show 0.1s forwards;
   gap: 5px;
+  z-index: 10;
 }
 .close {
   display: flex;
