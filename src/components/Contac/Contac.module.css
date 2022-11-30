@@ -1,0 +1,150 @@
+.container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+
+  width: 0vw;
+  height: 100vh;
+  animation: show 0.1s forwards;
+  gap: 5px;
+}
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 2vw;
+  top: 2vw;
+
+  border-radius: 50%;
+  background-color: rgb(240, 35, 35);
+  border: none;
+  color: var(--light-back-one);
+  font-weight: 600;
+
+  width: 30px;
+  height: 30px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--black);
+  box-shadow: 0 0 2px white;
+  border-radius: 5px;
+
+  width: 40%;
+  height: 85%;
+  gap: 5px;
+  padding: 10px;
+}
+.form h1 {
+  color: var(--white);
+}
+.containerInput,
+.containerTextarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 15%;
+}
+.containerTextarea {
+  height: 40%;
+}
+.containerInput label,
+.containerTextarea label {
+  position: absolute;
+  top: 0;
+  left: 17%;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 0 3px;
+}
+.containerInput input,
+.containerTextarea textarea {
+  width: 75%;
+  height: 75%;
+  border: 2px solid var(--gray);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1.2rem 8px;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.containerTextarea textarea {
+  height: 92%;
+  resize: none;
+}
+.containerInput input:focus,
+.containerTextarea textarea:focus {
+  outline: none;
+}
+.submit {
+  font-size: 1.2rem;
+  border-radius: 3px;
+  border: none;
+  min-width: 120px;
+  width: 40%;
+  height: 40px;
+  color: var(--gray);
+  background-color: var(--black2);
+  transition: .2s;
+  cursor: pointer;
+}
+
+.submit:hover{
+    color: var(--white);
+    background-color: var(--black-super-light);
+}
+
+.contacts {
+  position: absolute;
+  right: 1.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: auto;
+  height: 50%;
+}
+
+.btnContac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnContac:hover:nth-child(1) {
+  color: blueviolet;
+}
+
+.btnContac:hover:nth-child(2) {
+  color: green;
+}
+
+.btnContac:hover:nth-child(3) {
+  color: rgb(40, 103, 178);
+}
+
+@keyframes show {
+  100% {
+    width: 100vw;
+  }
+}

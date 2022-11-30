@@ -6,95 +6,106 @@ import { FaUserGraduate } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import css from "./Navbar.module.css";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import Contac from "../Contac/Contac";
 
 export default function Navbar() {
   const mode = useSelector((state) => state.mode);
   const lenguage = useSelector((state) => state.lenguage);
+  const [viewContac, setViewContac] = useState(false);
+
+  function see() {
+    setViewContac(!viewContac)
+  }
   return (
-    <ul className={css.container}>
-      <Link
-        to="/"
-        className={
-          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
-        }
-      >
-        <FaHome />
-        <span
+    <>
+      <ul className={css.container}>
+        <Link
+          to="/"
           className={
-            mode === "dark"
-              ? `${css.seccionNameDark}`
-              : `${css.seccionNameLight}`
+            mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
         >
-          {lenguage === "ESP" ? "Inicio" : "Home"}
-        </span>
-      </Link>
-      <Link
-        to="/about"
-        className={
-          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
-        }
-      >
-        <FaUserGraduate />
-        <span
+          <FaHome />
+          <span
+            className={
+              mode === "dark"
+                ? `${css.seccionNameDark}`
+                : `${css.seccionNameLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Inicio" : "Home"}
+          </span>
+        </Link>
+        <Link
+          to="/about"
           className={
-            mode === "dark"
-              ? `${css.seccionNameDark}`
-              : `${css.seccionNameLight}`
+            mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
         >
-          {lenguage === "ESP" ? "Sobre mi" : "About me"}
-        </span>
-      </Link>
-      <Link
-        to="/projects"
-        className={
-          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
-        }
-      >
-        <FaLayerGroup />
-        <span
+          <FaUserGraduate />
+          <span
+            className={
+              mode === "dark"
+                ? `${css.seccionNameDark}`
+                : `${css.seccionNameLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Sobre mi" : "About me"}
+          </span>
+        </Link>
+        <Link
+          to="/projects"
           className={
-            mode === "dark"
-              ? `${css.seccionNameDark}`
-              : `${css.seccionNameLight}`
+            mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
         >
-          {lenguage === "ESP" ? "Proyectos" : "Projects"}
-        </span>
-      </Link>
-      <li
-        className={
-          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
-        }
-      >
-        <MdDescription />
-        <span
+          <FaLayerGroup />
+          <span
+            className={
+              mode === "dark"
+                ? `${css.seccionNameDark}`
+                : `${css.seccionNameLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Proyectos" : "Projects"}
+          </span>
+        </Link>
+        <li
           className={
-            mode === "dark"
-              ? `${css.seccionNameDark}`
-              : `${css.seccionNameLight}`
+            mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
         >
-          {lenguage === "ESP" ? "CV" : "Resume"}
-        </span>
-      </li>
-      <li
-        className={
-          mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
-        }
-      >
-        <MdEmail />
-        <span
+          <MdDescription />
+          <span
+            className={
+              mode === "dark"
+                ? `${css.seccionNameDark}`
+                : `${css.seccionNameLight}`
+            }
+          >
+            {lenguage === "ESP" ? "CV" : "Resume"}
+          </span>
+        </li>
+        <li
           className={
-            mode === "dark"
-              ? `${css.seccionNameDark}`
-              : `${css.seccionNameLight}`
+            mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
+          onClick={see}
         >
-          {lenguage === "ESP" ? "Contacto" : "Contac"}
-        </span>
-      </li>
-    </ul>
+          <MdEmail />
+          <span
+            className={
+              mode === "dark"
+                ? `${css.seccionNameDark}`
+                : `${css.seccionNameLight}`
+            }
+          >
+            {lenguage === "ESP" ? "Contacto" : "Contac"}
+          </span>
+        </li>
+      </ul>
+      {viewContac && <Contac handleSee={see} />}
+    </>
   );
 }

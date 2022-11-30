@@ -18,6 +18,7 @@ a{
   --black: rgb(20, 22, 24);
   --black-light: rgb(25, 27, 29);
   --black-super-light: rgb(35, 37, 39);
+  --black2: rgb(65, 65, 65);
   --gray: rgb(150, 150, 150);
 
   /* ----- light MODE ----- */
