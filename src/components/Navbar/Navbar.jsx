@@ -8,19 +8,14 @@ import css from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import Contac from "../Contac/Contac";
-import Resume from "../Resume/Resume";
 
 export default function Navbar() {
   const mode = useSelector((state) => state.mode);
   const lenguage = useSelector((state) => state.lenguage);
   const [viewContac, setViewContac] = useState(false);
-  const [viewResume, setViewResume] = useState(false);
 
-  function seeResume() {
-    setViewResume(!viewResume)
-  }
   function seeContac() {
-    setViewContac(!viewContac)
+    setViewContac(!viewContac);
   }
   return (
     <>
@@ -76,11 +71,12 @@ export default function Navbar() {
             {lenguage === "ESP" ? "Proyectos" : "Projects"}
           </span>
         </Link>
-        <li
+        <a
           className={
             mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
           }
-          onClick={seeResume}
+          href="CV-Lautaro-Cesar-Perez.pdf"
+          target="_blank"
         >
           <MdDescription />
           <span
@@ -92,7 +88,7 @@ export default function Navbar() {
           >
             {lenguage === "ESP" ? "CV" : "Resume"}
           </span>
-        </li>
+        </a>
         <li
           className={
             mode === "dark" ? `${css.seccionDark}` : `${css.seccionLight}`
@@ -112,7 +108,6 @@ export default function Navbar() {
         </li>
       </ul>
       {viewContac && <Contac handleSee={seeContac} />}
-      {viewResume && <Resume handleSee={seeResume} />}
     </>
   );
 }

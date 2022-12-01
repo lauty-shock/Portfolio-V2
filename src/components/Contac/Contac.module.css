@@ -34,6 +34,10 @@
   height: 35px;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: 0.1s;
+}
+.close:hover {
+  background-color: rgb(226, 14, 14);
 }
 .formDark,
 .formLight {
