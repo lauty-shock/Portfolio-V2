@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--background-light);
+
+  width: 100%;
+  height: 100vh;
+  padding: 10vh 20px 0;
+}
+.title {
+  font-weight: 500;
+  font-size: var(--large);
+}
+.containerCards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 90%;
+  height: 78vh;
+  padding-top: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  width: 330px;
+  height: 450px;
+  background-color: var(--white);
+  position: relative;
+  padding: 200px 20px 20px;
+  transition: 0.3s;
+}
+.card:hover{
+  box-shadow: 0 0 50px var(--blue);
+  animation: prueba .3s ease both;
+}
+
+@keyframes prueba {
+  0%{
+    background-color: var(--white);
+  }
+  100%{
+    background-color: var(--background);
+  }
+}
+
+.card:hover> span,.card:hover> p{
+  color: white;
+}
+.card img {
+  position: absolute;
+  top: -20px;
+  border-radius: 8px;
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 10px 35px rgb(100, 100, 100);
+}
+.card span {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: var(--background-light);
+}
+.card p {
+  margin-top: 15px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--background-light);
+}
+.containerHover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: -20px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+
+  width: 90%;
+  height: 200px;
+  padding: 40px 0 10px;
+  z-index: 10;
+  transition: 0.3s;
+}
+.card:hover .containerHover {
+  opacity: 1;
+}
+.deploy{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 40px;
+}
+.deploy a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 40px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+.tecnologias{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: wrap;
+  width: 98%;
+  height: auto;
+  gap: 5px;
+}
+.nameTecnologia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff !important;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 0 5px;
+  height: 20px;
+  margin: 0px !important;
+}
