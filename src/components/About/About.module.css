@@ -1,9 +1,18 @@
+.containerShadow {
+  display: flex;
+  align-items: center;
+
+  min-height: 101vh;
+  background-color: var(--background);
+  width: 100%;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   background-color: var(--background-light);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
 
   width: 100%;
   height: 100vh;
@@ -17,20 +26,17 @@
   display: flex;
   justify-content: space-between;
 
-  width: 80%;
+  width: 100%;
   height: 74vh;
   margin-top: 20px;
 }
 .img {
-  filter: grayscale(100%);
   border-radius: 8px;
   width: 38%;
   height: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   transition: all 0.5s;
-}
-.img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.005);
+  margin: 0 6%;
 }
 .containerText {
   display: flex;
@@ -39,11 +45,13 @@
 
   font-size: var(--small);
 
-  width: 60%;
+  width: 62%;
   height: 100%;
   padding: 5px 0;
+  margin-right: 10%;
 }
 .btn {
+  text-align: center;
   background-color: var(--blue);
   border: none;
   border-radius: 30px;
@@ -57,4 +65,66 @@
 
 .btn:hover {
   box-shadow: 0 0 10px var(--blue), inset 0 0 5px var(--blue);
+}
+
+@media (max-width: 1160px) {
+  .containerText {
+    margin-right: 0px;
+  }
+}
+@media (max-width: 1040px) {
+  .img {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    height: 180vh;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 90%;
+    margin-top: 10px;
+  }
+  .img {
+    height: 70vh;
+    margin: 0;
+  }
+  .containerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    font-size: var(--small);
+  
+    width: 90%;
+    height: 50%;
+    padding: 10px 0;
+    margin-right: 0%;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    height: 250vh;
+  }
+  .img {
+    width: 90%;
+    height: 90%;
+  }
+}
+@media (max-width: 540px) {
+  .containerText {
+    gap: 15px;
+  }
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
 }

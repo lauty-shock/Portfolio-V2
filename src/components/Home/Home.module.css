@@ -14,8 +14,8 @@
   display: flex;
   flex-direction: column;
 
-  width: 40%;
-  height: 57vh;
+  width: calc(100% - 57vh);
+  height: 70vh;
   gap: 5px;
 }
 
@@ -34,7 +34,7 @@
 }
 .text {
   font-size: var(--extra-small);
-  width: 80%;
+  max-width: 500px;
   margin-top: 10px;
 }
 .containerRedes {
@@ -92,4 +92,21 @@
   );
   width: 57vh;
   height: 57vh;
+}
+
+@media (max-width: 940px) {
+  .img {
+    display: none;
+  }
+  .containerPresentacion {
+    width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .soy {
+    display: none;
+  }
+  .container {
+    padding: 10vh 20px 0;
+  }
 }

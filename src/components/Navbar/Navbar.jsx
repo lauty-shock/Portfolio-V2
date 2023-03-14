@@ -1,17 +1,26 @@
-import css from "./Navbar.module.css";
+import React, { useState } from "react";
+import "./Nav.css";
 
-export default function Navbar() {
+export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={css.container}>
-      <img src="/img/S-logo-blanco.svg" alt="Logo" />
+    <div className="Navbar">
+      <img className="nav-logo" src="img/S-logo-blanco.svg" alt="Logo" />
 
-      <ul>
-        <a className={css.linkActive} href="#inicio">INICIO</a>
-        <a className={css.link} href="#sobreMi">SOBRE MI</a>
-        <a className={css.link} href="#skills">SKILLS</a>
-        <a className={css.link} href="#proyectos">PROYECTOS</a>
-        <a className={css.link} href="#contacto">CONTACTO</a>
-      </ul>
+      <div className={`nav-items ${isOpen && "open"}`}>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobreMi">Sobre mí</a>
+        <a href="#skills">Skills</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      
+      <div
+        className={`nav-toggle ${isOpen && "open"}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="bar"></div>
+      </div>
     </div>
   );
 }

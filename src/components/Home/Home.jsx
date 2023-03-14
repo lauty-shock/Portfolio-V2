@@ -16,9 +16,10 @@ export default function Home() {
         <span className={css.presentacion}>Hola! Yo soy</span>
         <span className={css.nombre}>Lautaro Perez</span>
         <span className={css.presentacion}>
-          Y soy
+          <span className={css.soy}>Y soy </span>
           <span className={css.servicios}>
-            desarrollador web {text}
+            Desarrollador web {text}
+            {/* Desarrollador web Front-End */}
             <Cursor />
           </span>
         </span>
@@ -57,7 +58,9 @@ export default function Home() {
             <BsFillEnvelopeFill />
           </a>
         </div>
-        <a className={css.btn} href="#sobreMi">Saber más</a>
+        <a className={css.btn} href="#sobreMi">
+          Saber más
+        </a>
       </div>
       <div className={css.img}></div>
     </div>

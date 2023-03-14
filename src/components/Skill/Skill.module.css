@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: start;
 
-  width: 80%;
+  width: auto;
   height: 80vh;
 }
 .containerSkills {
@@ -81,10 +81,77 @@
   height: 100%;
   object-fit: contain;
 }
-.skill span{
-    background-color: var(--background-light);
-    padding: 2px 10px;
-    border-radius: 8px;
-    margin-top: 10px;
+.skill span {
+  background-color: var(--background-light);
+  padding: 2px 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 1050px) {
+  .container {
+    height: auto;
+    padding: 10vh 20px 10px;
+  }
+  .titleSkill {
+    font-size: 1.3rem;
+    width: auto;
+  }
+  .pensarNombre {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: start;
+
+    width: 100%;
+    gap: 5px;
+    height: auto;
+    margin-top: 20px;
+  }
+  .containerSkills {
+    flex-direction: column;
     text-align: center;
+    width: 200px;
+    height: auto;
+  }
+  .containerSkills::before {
+    left: calc(50% - 4px);
+    top: 1.6rem;
+    margin-top: 0;
+    width: 4px;
+    height: calc(100% - 2rem);
+  }
+  .containerSkills::after {
+    left: calc(50% - 12px);
+    bottom: 0px;
+    margin-top: 0;
+  }
+  .skills {
+    flex-direction: column;
+    gap: 0;
+    padding: 0px 0px 50px;
+  }
+  .skill {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 650px) {
+  .skill {
+    width: 80px;
+    height: 110px;
+  }
+  .skill div {
+    width: 80px;
+    height: 80px;
+    padding: 13px;
+  }
+  .skill span {
+    padding: 2px 10px;
+    margin-top: 6px;
+    font-size: 0.8rem;
+  }
+  .containerSkills {
+    width: auto;
+  }
 }
