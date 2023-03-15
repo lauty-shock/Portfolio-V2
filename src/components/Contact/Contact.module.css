@@ -61,3 +61,42 @@
 .form button:hover {
   box-shadow: 0 0 10px var(--blue), inset 0 0 5px var(--blue);
 }
+@media (max-width: 870px) {
+  .container {
+    height: auto;
+    padding: 10vh 20px 20px;
+  }
+  .form {
+    height: auto;
+    margin-top: 5vh;
+    padding: 15px 30px;
+  }
+  .form label{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .form button {
+    font-size: 1rem;
+  
+    width: 130px;
+    height: 35px;
+    margin-top: 3vh;
+  }
+}
+
+@media (max-width: 410px) {
+  .title{
+    margin-top: 20px;
+    font-size: var(--medium);
+  }
+  .form {
+    padding: 15px 10px;
+  }
+}
+@media (max-width: 285px) {
+  .title{
+    font-size: 1.8rem;
+  }
+}
