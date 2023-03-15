@@ -9,16 +9,14 @@ export default function Contact() {
     name: "",
     mensaje: "",
   });
-
   function handleInput(e) {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
   }
-
   function submit(e) {
-    e.preventDefault()
+    e.preventDefault();
     if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/.test(input.email)) {
       Swal.fire({
         // background: "black",
@@ -71,14 +69,31 @@ export default function Contact() {
     <div id="contacto" className={css.container}>
       <span className={css.title}>CONTACTO</span>
       <div className={css.form}>
-          <label htmlFor="">Nombre</label>
-          <input type="text" name="name" value={input.name} onChange={(e) => handleInput(e)} placeholder="Tu nombre" />
-          <label htmlFor="">Dirección de correo electrónico</label>
-          <input type="email" name="email" value={input.email} onChange={(e) => handleInput(e)} placeholder="ejemplo@gmail.com" />
-          <label htmlFor="">Su mensaje</label>
-          <textarea name="mensaje" value={input.mensaje} onChange={(e) => handleInput(e)} placeholder="¡Hola! Quiero contactarme con vos porque..."></textarea>
+        <label htmlFor="">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          value={input.name}
+          onChange={(e) => handleInput(e)}
+          placeholder="Tu nombre"
+        />
+        <label htmlFor="">Correo electrónico</label>
+        <input
+          type="email"
+          name="email"
+          value={input.email}
+          onChange={(e) => handleInput(e)}
+          placeholder="ejemplo@gmail.com"
+        />
+        <label htmlFor="">Su mensaje</label>
+        <textarea
+          name="mensaje"
+          value={input.mensaje}
+          onChange={(e) => handleInput(e)}
+          placeholder="¡Hola! Quiero contactarme con vos porque..."
+        ></textarea>
         <center>
-          <button onClick={e => submit(e)}>Enviar mensaje</button>
+          <button onClick={(e) => submit(e)}>Enviar mensaje</button>
         </center>
       </div>
     </div>
