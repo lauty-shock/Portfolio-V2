@@ -50,7 +50,6 @@
   box-shadow: 0 0 50px var(--blue);
   animation: prueba .35s ease both;
 }
-
 @keyframes prueba {
   0%{
     background-color: var(--white);
@@ -59,7 +58,6 @@
     background-color: var(--background);
   }
 }
-
 .card:hover> span,.card:hover> p{
   color: white;
 }
@@ -142,7 +140,11 @@
   height: 20px;
   margin: 0px !important;
 }
-
+@media (max-width: 830px) {
+  .container {
+    padding: 20px;
+  }
+}
 @media (max-width: 799px) {
   .card{
     height: auto;
