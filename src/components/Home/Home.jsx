@@ -19,7 +19,6 @@ export default function Home() {
           <span className={css.soy}>Y soy </span>
           <span className={css.servicios}>
             Desarrollador web {text}
-            {/* Desarrollador web Front-End */}
             <Cursor />
           </span>
         </span>
@@ -62,7 +61,9 @@ export default function Home() {
           Saber más
         </a>
       </div>
-      <div className={css.img}></div>
+      <div className={css.containerImg}>
+        <img src="img/Perfil.png" alt="Yo" />
+      </div>
     </div>
   );
 }

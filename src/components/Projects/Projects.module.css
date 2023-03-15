@@ -109,7 +109,7 @@
   width: 50%;
   height: 40px;
 }
-.deploy a{
+.deploy a, .containerDeployMovil a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,9 +140,28 @@
   height: 20px;
   margin: 0px !important;
 }
+.containerDeployMovil{
+  display: none;
+}
 @media (max-width: 830px) {
   .container {
     padding: 20px;
+  }
+  .containerDeployMovil{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .card:hover{
+    box-shadow: none;
+    animation: none;
+  }
+  .card:hover> span,.card:hover> p{
+    color: var(--background);
   }
 }
 @media (max-width: 799px) {

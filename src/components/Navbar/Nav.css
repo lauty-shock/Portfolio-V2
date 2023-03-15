@@ -68,7 +68,7 @@
     background-color: var(--background);
 
     width: 100vw;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 50px);
 
     transform: translateX(-100%);
     transition: all 0.45s;

@@ -8,11 +8,11 @@ export default function Nav() {
       <img className="nav-logo" src="img/S-logo-blanco.svg" alt="Logo" />
 
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="#inicio">Inicio</a>
-        <a href="#sobreMi">Sobre mí</a>
-        <a href="#skills">Skills</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <a onClick={() => setIsOpen(!isOpen)} href="#inicio">Inicio</a>
+        <a onClick={() => setIsOpen(!isOpen)} href="#sobreMi">Sobre mí</a>
+        <a onClick={() => setIsOpen(!isOpen)} href="#skills">Skills</a>
+        <a onClick={() => setIsOpen(!isOpen)} href="#proyectos">Proyectos</a>
+        <a onClick={() => setIsOpen(!isOpen)} href="#contacto">Contacto</a>
       </div>
       
       <div

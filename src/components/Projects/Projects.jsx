@@ -30,6 +30,14 @@ export default function Projects() {
               </div>
               <span>{p.name}</span>
               <p>{p.text}</p>
+              <div className={css.containerDeployMovil}>
+                <a href={p.deploy} target="_blank">
+                  <BsBoxArrowUpRight />
+                </a>
+                <a href={p.github} target="_blank">
+                  <BsGithub />
+                </a>
+              </div>
             </div>
           ))}
         </div>
