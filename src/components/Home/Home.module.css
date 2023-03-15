@@ -15,7 +15,7 @@
   flex-direction: column;
 
   width: calc(100% - 57vh);
-  height: 70vh;
+  height: auto;
   gap: 5px;
 }
 
@@ -108,5 +108,13 @@
   }
   .container {
     padding: 10vh 20px 0;
+  }
+}
+@media (max-width: 330px) {
+  .red {
+    font-size: 1.7rem;
+    width: 50px;
+    height: 50px;
+    transition: 0.45s;
   }
 }

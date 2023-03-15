@@ -103,7 +103,7 @@
     font-size: var(--small);
   
     width: 90%;
-    height: 50%;
+    height: auto;
     padding: 10px 0;
     margin-right: 0%;
   }
@@ -126,16 +126,5 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
-  }
-}
-@media (max-width: 410px) {
-  .title{
-    margin-top: 20px;
-    font-size: var(--medium);
-  }
-}
-@media (max-width: 285px) {
-  .title{
-    font-size: 1.8rem;
   }
 }
