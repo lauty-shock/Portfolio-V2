@@ -46,19 +46,20 @@
   transition: 0.4s;
   margin-top: 40px;
 }
-.card:hover{
+.card:hover {
   box-shadow: 0 0 50px var(--blue);
-  animation: prueba .35s ease both;
+  animation: prueba 0.35s ease both;
 }
 @keyframes prueba {
-  0%{
+  0% {
     background-color: var(--white);
   }
-  100%{
+  100% {
     background-color: var(--background);
   }
 }
-.card:hover> span,.card:hover> p{
+.card:hover > span,
+.card:hover > p {
   color: white;
 }
 .card img {
@@ -103,13 +104,14 @@
 .card:hover .containerHover {
   opacity: 1;
 }
-.deploy{
+.deploy {
   display: flex;
   justify-content: space-between;
   width: 50%;
   height: 40px;
 }
-.deploy a, .containerDeployMovil a{
+.deploy a,
+.containerDeployMovil a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,7 +121,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
 }
-.tecnologias{
+.tecnologias {
   display: flex;
   justify-content: center;
   align-items: end;
@@ -128,7 +130,7 @@
   height: auto;
   gap: 5px;
 }
-.nameTecnologia{
+.nameTecnologia {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,14 +142,17 @@
   height: 20px;
   margin: 0px !important;
 }
-.containerDeployMovil{
+.containerDeployMovil {
   display: none;
 }
 @media (max-width: 830px) {
   .container {
     padding: 20px;
   }
-  .containerDeployMovil{
+  .containerHover {
+    display: none;
+  }
+  .containerDeployMovil {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -156,27 +161,28 @@
     width: 100%;
     margin-top: 20px;
   }
-  .card:hover{
+  .card:hover {
     box-shadow: none;
     animation: none;
   }
-  .card:hover> span,.card:hover> p{
+  .card:hover > span,
+  .card:hover > p {
     color: var(--background);
   }
 }
 @media (max-width: 799px) {
-  .card{
+  .card {
     height: auto;
   }
 }
 @media (max-width: 410px) {
-  .title{
+  .title {
     margin-top: 20px;
     font-size: var(--medium);
   }
 }
 @media (max-width: 285px) {
-  .title{
+  .title {
     font-size: 1.8rem;
   }
 }
