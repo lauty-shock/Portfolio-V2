@@ -51,12 +51,12 @@
 .titleSkill {
   color: var(--blue);
   font-weight: 500;
-  width: 130px;
+  width: 120px;
 }
 .skills {
   display: flex;
   gap: 30px;
-  padding: 0 80px;
+  padding: 0 50px 0 20px;
 }
 .skill {
   display: flex;
@@ -88,7 +88,6 @@
   margin-top: 10px;
   text-align: center;
 }
-
 @media (max-width: 1050px) {
   .container {
     height: auto;
