@@ -7,7 +7,7 @@ export default function Contact() {
   function submit(e) {
     e.preventDefault();
     axios.post("https://submit-form.com/nT4t6IoQ", formik.values);
-    formik.resetForm()
+    formik.resetForm();
 
     Swal.fire({
       background: "rgb(100, 100, 100)",
@@ -106,7 +106,7 @@ export default function Contact() {
 
         <center>
           {Object.keys(formik.errors).length !== 0 ? (
-            <button className={css.inavilitado}>Error</button>
+            <button className={css.inavilitado}>Enviar mensaje</button>
           ) : (
             <button className={css.avilitado} onClick={submit}>
               Enviar mensaje
