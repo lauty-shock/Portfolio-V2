@@ -47,20 +47,7 @@
   margin-top: 40px;
 }
 .card:hover {
-  box-shadow: 0 0 50px var(--blue);
-  animation: prueba 0.35s ease both;
-}
-@keyframes prueba {
-  0% {
-    background-color: var(--white);
-  }
-  100% {
-    background-color: var(--background);
-  }
-}
-.card:hover > span,
-.card:hover > p {
-  color: white;
+  box-shadow: 0 0 50px var(--background);
 }
 .card img {
   position: absolute;
@@ -90,9 +77,8 @@
   position: absolute;
   top: -20px;
 
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
   opacity: 0;
 
   width: 90%;
@@ -118,7 +104,7 @@
   font-size: 25px;
   width: 40px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
 }
 .tecnologias {
@@ -134,7 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, .5);
   color: #fff !important;
   border-radius: 8px;
   font-size: 13px;
@@ -163,11 +149,6 @@
   }
   .card:hover {
     box-shadow: none;
-    animation: none;
-  }
-  .card:hover > span,
-  .card:hover > p {
-    color: var(--background);
   }
 }
 @media (max-width: 799px) {
