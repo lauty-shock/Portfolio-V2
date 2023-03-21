@@ -78,7 +78,6 @@ export default function Contact() {
         {formik.errors.name ? (
           <div className={css.error}>{formik.errors.name}</div>
         ) : null}
-
         <label htmlFor="email">Correo electrónico</label>
         <input
           id="email"
@@ -91,7 +90,6 @@ export default function Contact() {
         {formik.errors.email ? (
           <div className={css.error}>{formik.errors.email}</div>
         ) : null}
-
         <label htmlFor="mensaje">Su mensaje</label>
         <textarea
           id="mensaje"
@@ -103,9 +101,11 @@ export default function Contact() {
         {formik.errors.mensaje ? (
           <div className={css.errorTextarea}>{formik.errors.mensaje}</div>
         ) : null}
-
         <center>
-          {Object.keys(formik.errors).length !== 0 ? (
+          {(Object.keys(formik.errors).length !== 0) |
+          (formik.values.name === "") |
+          (formik.values.email === "") |
+          (formik.values.mensaje === "") ? (
             <button className={css.inavilitado}>Enviar mensaje</button>
           ) : (
             <button className={css.avilitado} onClick={submit}>
